@@ -39,6 +39,10 @@ java PasswordGenerator
 # 或使用批次檔案
 compile_and_run.bat    # Windows
 ./compile_and_run.sh   # Unix/Linux/Mac
+
+#備註 :
+編碼問題中文會有亂碼
+亦可使用 compile_english.bat 的英文版
 ```
 
 ## 實驗結果
