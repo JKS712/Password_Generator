@@ -44,24 +44,16 @@ compile_and_run.bat    # Windows
 ## 實驗結果
 
 ### Hash Function 效能測試 (10,000次測試)
-- 簡單除法Hash：45.23 ms，分布均勻性 87.3%
-- 乘法Hash：52.67 ms，分布均勻性 93.7%
-- 通用Hash：48.91 ms，分布均勻性 96.2%
+# Password Length: 32 characters
+- Simple Hash (Division Method): Total   132.77 ms, Average   0.0133 ms
+- Multiplication Hash (Fixed)  : Total   225.06 ms, Average   0.0225 ms
+- Universal Hash               : Total   249.45 ms, Average   0.0249 ms%
 
 ### 資料結構效能比較 (10,000次操作)
-- ArrayList隨機存取：2.1 ms vs LinkedList：847.3 ms
-- HashMap查找：3.2 ms vs TreeMap：15.8 ms
+- Insert 10000 elements:
+  ArrayList: 3.81 ms
+  LinkedList: 2.46 ms
 
-## 學習價值
-
-- 驗證理論時間複雜度與實際效能表現
-- 掌握Java GUI程式設計完整流程
-- 理解演算法選擇對軟體效能的實際影響
-- 實踐軟體工程模組化設計原則
-
-## 未來改進
-
-- 實作更多現代Hash演算法（SHA-256、bcrypt）
-- 加入機器學習密碼強度評估
-- 支援雲端同步功能
-- 並行計算優化效能
+- Random access 1000 times:
+  ArrayList: 0.51 ms
+  LinkedList: 6.62 ms
