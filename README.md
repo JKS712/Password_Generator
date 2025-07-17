@@ -47,7 +47,7 @@ compile_and_run.bat    # Windows
 
 ## 實驗結果
 
-### Hash Function 效能測試 (10,000次測試)
+# Hash Function 效能測試 (10,000次測試)
 # Password Length: 32 characters
 - Simple Hash (Division Method): Total   132.77 ms, Average   0.0133 ms
 - Multiplication Hash (Fixed)  : Total   225.06 ms, Average   0.0225 ms
