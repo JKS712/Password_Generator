@@ -45,15 +45,15 @@ compile_and_run.bat    # Windows
 亦可使用 compile_english.bat 的英文版
 ```
 
-## 實驗結果
+# 實驗結果
 
-# Hash Function 效能測試 (10,000次測試)
+### Hash Function 效能測試 (10,000次測試)
 Password Length: 32 characters
 - Simple Hash (Division Method): Total   132.77 ms, Average   0.0133 ms
 - Multiplication Hash (Fixed)  : Total   225.06 ms, Average   0.0225 ms
 - Universal Hash               : Total   249.45 ms, Average   0.0249 ms%
 
-# 資料結構效能比較 (10,000次操作)
+### 資料結構效能比較 (10,000次操作)
 - Insert 10000 elements:
   ArrayList: 3.81 ms
   LinkedList: 2.46 ms
