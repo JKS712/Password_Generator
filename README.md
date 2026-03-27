@@ -23,6 +23,42 @@
 - **ArrayList vs LinkedList**：存取與插入效能分析
 - **HashMap vs TreeMap**：查找效能與排序支援比較
 
+- ### 1. 簡單除法 Hash Function
+```java
+// 實作原理：h(k) = k mod m
+protected int hash(long input, int mod) {
+    return (int) Math.abs(input % mod);
+}
+```
+- **優點**：計算簡單、速度快
+- **缺點**：分布可能不均勻，容易產生聚集
+
+### 2. 乘法 Hash Function  
+```java
+// 實作原理：h(k) = ((k * A) >> 32) mod m
+// A = 2654435769L (Knuth建議的黃金比例常數)
+protected int hash(long input, int mod) {
+    long k = input & MASK;
+    long product = k * A;
+    long hashValue = (product >> 32) % mod;
+    return (int) Math.abs(hashValue);
+}
+```
+- **優點**：分布較均勻、不依賴表大小
+- **缺點**：計算較複雜、需要適當的乘數選擇
+
+### 3. 通用 Hash Function
+```java
+// 實作原理：h(k) = ((a*k + b) mod p) mod m  
+// p為大質數，a,b為隨機選擇的係數
+protected int hash(long input, int mod) {
+    long ak = ((a % p) * (input % p)) % p;
+    long hashValue = ((ak + b) % p) % mod;
+    return (int) Math.abs(hashValue);
+}
+```
+
+
 ## 系統需求
 
 - Java JDK 8 或更高版本
